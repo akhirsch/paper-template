@@ -1,0 +1,21 @@
+% Notes
+\newcommand{\newcommenter}[3]{%
+  \newcommand{#1}[1]{%
+    \textcolor{#2}{\small\textsf{[#3: {##1}]}}%
+  }%
+}
+\newcommenter{\akh}{purple}{AKH}
+
+% AMSThm Setup
+\theoremstyle{theorem}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{ex}{Example}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "conference"
+%%% End:

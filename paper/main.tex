@@ -1,0 +1,126 @@
+\newif\iftr\trfalse
+
+\ifcase\paperformat\relax
+  \trtrue
+\or
+  \trfalse
+\fi
+  
+\ifanon
+  \documentclass[acmsmall,review,anonymous]{acmart}
+\else
+  \iftr
+    \documentclass[acmsmall,nonacm]{acmart}
+  \else
+    \documentclass[acmsmall]{acmart}
+  \fi
+\fi
+
+\iftr
+  \settopmatter{printfolios=true,printccs=false,printacmref=false}
+\fi
+
+\iftr
+
+  \acmJournal{PACMPL}
+  \acmVolume{MPI-SWS Tech Report}
+  \acmNumber{}
+  \acmArticle{}
+  \acmYear{2021}
+  \acmMonth{11}
+  \startPage{1}
+\else
+  % \acmPrice{}
+  % \acmDOI{10.1145/3498684}
+  % \acmYear{2022}
+  % \copyrightyear{2022}
+  % \acmSubmissionID{popl22main-p131-p}
+  % \acmJournal{PACMPL}
+  % \acmVolume{6}
+  % \acmNumber{POPL}
+  % \acmArticle{23}
+  % \acmMonth{1}
+\fi
+
+\iftr
+  \setcopyright{ccby}
+\else
+  \setcopyright{rightsretained}
+\fi
+
+\bibliographystyle{ACM-Reference-Format}
+\citestyle{acmauthoryear}
+
+\input{includes}
+\input{macros}
+
+\iftr
+\title[title]{{\small Technical Report \hfill \today}\\ title}
+\date{\today}
+\else
+  \title{title}
+  \date{}
+\fi
+
+
+  \author{}
+  \orcid{}
+  \affiliation{
+    \institution{}
+    \city{}
+    \country{USA}
+  }
+  \email{}
+
+  % ..
+
+
+\begin{document}
+
+% PACM Required stuff here
+\begin{abstract}
+  \input{abstract}
+\end{abstract}
+
+% \begin{CCSXML}
+%   <ccs2012>
+%   <concept>
+%   <concept_id>10003752.10010124.10010125.10010127</concept_id>
+%   <concept_desc>Theory of computation~Functional constructs</concept_desc>
+%   <concept_significance>500</concept_significance>
+%   </concept>
+%   <concept>
+%   <concept_id>10003752.10010124.10010125.10010130</concept_id>
+%   <concept_desc>Theory of computation~Type structures</concept_desc>
+%   <concept_significance>300</concept_significance>
+%   </concept>
+%   <concept>
+%   <concept_id>10010147.10011777.10011014</concept_id>
+%   <concept_desc>Computing methodologies~Concurrent programming languages</concept_desc>
+%   <concept_significance>500</concept_significance>
+%   </concept>
+%   </ccs2012>
+% \end{CCSXML}
+
+\ccsdesc[500]{Theory of computation~Functional constructs}
+\ccsdesc[300]{Theory of computation~Type structures}
+\ccsdesc[500]{Computing methodologies~Concurrent programming languages}
+\keywords{Concurrency, Choreographies, Functional programming}
+
+\maketitle
+
+\input{sections}
+\iftr
+  \bibliography{../bibliography/main}
+\fi  
+  \appendix
+  \section*{Appendices}
+  \input{appendices}
+
+\end{document}  
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "conference"
+%%% TeX-master: "conference"
+%%% End:

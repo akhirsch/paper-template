@@ -10,13 +10,30 @@ The directory structure of this template is as follows:
   + Makefile
   + README.md
   + .gitignore
-  + .latexrc
+  + .latexmkrc
   + paper
-     - paper.tex
+     - conference.tex
+	 - conference_anon.tex
+	 - tech_report.tex
+	 - main.tex
+	 - includes.tex
+	 - macros.tex
 	 - sections.tex
 	 - intro.tex
 	 - conclusion.tex
+	 - appendices.tex
+  + pdfs
   + bibliography
      - main.bib
+	 - all_cites.tex
+	 - .gitignore
 ## Latex Tips and Tricks
 - Use one sentence per line
+- Use latexmk whenever you can!
+## Bibliography Management
+Please keep additions/changes to the bibliography file in separate commits. 
+The bibliography file is set up as a [git subtree](https://www.atlassian.com/git/tutorials/git-subtree).
+The remote is [git@github.com:akhirsch/bibliography](https://www.github.com/akhirsch/bibliography).
+Please push any changes or additions there using git subtree!
+If that doesn't work, you can use git cherry-pick, but that's a more complicated procedure.
+You can also simply modify the bibliography repo itself.
