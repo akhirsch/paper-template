@@ -1,27 +1,22 @@
-.PHONY: all paper clean clean_paper cleanall cleanall_paper
+BIB := ../bibliography/main.bib
 
-all: paper
+PAPER_FILES := $(find . -name "*.tex")
 
-paper: 
-	make -C paper
+export TEXINPUTS = .::$TEXMF/tex/::../styles::../styles/latex-pl-syntax
 
-clean: clean_paper
-	@for f in $(CLEANABLES); do \
-		echo "REMOVING $$f";\
-		rm $$f;\
-	done
+.PHONY: clean cleanall all PACMAnon PACMCameraReady
 
-clean_paper:
-	make clean -C paper
+all: conference conference_anon tech_report
 
-cleanall: cleanall_paper
-	@for f in $(ALLCLEANABLES); do \
-		echo "REMOVING $$f";\
-		rm $$f;\
-	done
+conference: conference.pdf
 
-cleanall_paper:
-	make cleanall -C paper
+conference_anon: conference_anon.pdf
+
+tech_report: tech_report.pdf
+
+%.pdf: %.tex $(PAPER_FILES) $(BIB)
+	latexmk -pdf -bibtex -synctex=1 $<
+
 
 ALLCLEANABLES := $(shell find . \( -name '*.aux'\
                              -o -name '\#*\#'\
@@ -41,7 +36,7 @@ ALLCLEANABLES := $(shell find . \( -name '*.aux'\
 			     -o -name '*.fdb_latexmk'\
 			     -o -name '*.xcp'\
 			     -o -name '*.xoj'\
-                             -o -name '*.lof' \) -type f -not -path "./submissions/*" -not -path "./.git/*" -not -name 'acmart.pdf')
+                             -o -name '*.lof' \) -type f)
 
 CLEANABLES := $(shell find . \( -name '*.aux'\
 			     -o -name '\#*\#'\
@@ -58,4 +53,16 @@ CLEANABLES := $(shell find . \( -name '*.aux'\
 			     -o -name '*.rip'\
 			     -o -name '*.fdb_latexmk'\
 			     -o -name '*.xcp'\
-                             -o -name '*.lof' \) -type f -not -path "./submissions/*" -not -path "./.git/*")
+                             -o -name '*.lof' \) -type f)
+
+clean: 
+	@for f in $(CLEANABLES); do \
+		echo "REMOVING $$f";\
+		rm $$f;\
+	done
+
+cleanall: 
+	@for f in $(ALLCLEANABLES); do \
+		echo "REMOVING $$f";\
+		rm $$f;\
+	done
