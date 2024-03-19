@@ -4,7 +4,7 @@ PAPER_FILES := $(find . -name "*.tex")
 
 export TEXINPUTS = .::$TEXMF/tex/::../styles::../styles/latex-pl-syntax
 
-.PHONY: clean cleanall all PACMAnon PACMCameraReady
+.PHONY: clean cleanall all conference conference_anon tech_report
 
 all: conference conference_anon tech_report
 
