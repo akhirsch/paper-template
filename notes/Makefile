@@ -1,11 +1,19 @@
-.PHONY: all paper clean clean_paper cleanall cleanall_paper
+BIB := ../bibliography/main.bib
 
-all: paper
+PAPER_FILES := $(find . -name "*.tex")
 
-paper: 
-	make -C paper
+export TEXINPUTS = .::$TEXMF/tex/::../styles::../latex-pl-syntax
 
-clean: clean_paper
+.PHONY: clean cleanall all notes
+
+all: notes
+
+notes: notes.pdf
+
+%.pdf: %.tex $(PAPER_FILES) $(BIB)
+	latexmk -pdf -bibtex -synctex=1 $<
+
+clean: 
 	@find . \( -name '*.aux'\
 					-o -name '*~'\
 					-o -name '*.synctex.gz'\
@@ -22,10 +30,7 @@ clean: clean_paper
 					\) -type f -not -path "./.git/*" -not -path "./src/*"\
 					-exec sh -c 'echo "REMOVING {}"; rm {}' ';'
 
-clean_paper:
-	make clean -C paper
-
-cleanall: cleanall_paper
+cleanall: 
 	@find . \( -name '*.aux'\
 					-o -name '*~'\
 					-o -name '*.synctex.gz'\
@@ -47,6 +52,3 @@ cleanall: cleanall_paper
 	 				-o -name '_minted*'\
 	        \) -type d -not -path "./.git/*" -not -path "./src/*" -prune\
 					-exec sh -c 'echo "REMOVING {}"; rm -r {}' ';'
-
-cleanall_paper:
-	make cleanall -C paper

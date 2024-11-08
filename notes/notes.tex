@@ -1,0 +1,39 @@
+\PassOptionsToPackage{dvipsnames}{xcolor} % to enable dvipsnames option in xcolor package
+\documentclass{article}
+
+\usepackage{microtype}
+\usepackage{mathpartir}
+\usepackage{xspace}
+\usepackage{xparse}
+\usepackage{mathtools}
+\usepackage{scalerel}
+\usepackage{suffix}
+\usepackage{enumitem}
+\usepackage{stmaryrd}
+\usepackage{xcolor}
+
+\let\Bbbk\relax % Apparently amssymb defines \Bbbk and so does newtxmath, which acmart requires.
+\usepackage{amsmath,amsthm,amssymb}
+
+\frenchspacing
+
+% Notes
+\newcommand{\newcommenter}[3]{%
+  \newcommand{#1}[1]{%
+    \textcolor{#2}{\small\textsf{[#3: {##1}]}}%
+  }%
+}
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{antiqueruby}{RGB}{139,0,0}
+\newcommenter{\akh}{Fuchsia}{AKH}
+
+
+\title{Notes}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+
+\end{document}
