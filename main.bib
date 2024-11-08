@@ -35,6 +35,8 @@
 @string{PLACES="{Programming-Language Approaches to Concurrency- and Communication-cEntric Software ({PLACES})}"}
 @string{SLE="Software Language Engineering ({SLE})"}
 @string{SIGPLAN="SIGPLAN Notices"}
+@string{FAC="Formal Aspects of Computing"}
+@string{SDT="Semantics of Data Types"}
 
 %% Software engineering
 @string{ICSE="International Conference on Software Engineering ({ICSE})"}
@@ -94,6 +96,7 @@
 @string{TABLEAUX="Automated Reasoning with Analytic Tableaux and Related Methods ({TABLEAUX})"}
 @string{ZMLGM="Zeitschrift f{\"u}r Mathematische Logik und Grundlagen der Mathematik"}
 @string{LPAR="Logic for Programming, Artificial Intelligence, and Reasoning ({LPAR})"}
+@string{COLOG="Computer Logic ({COLOG})"}
 
 %% Theory
 @string{FOSSACS="Foundations of Software Science and Computational Structures ({FoSSaCS})"}
@@ -150,6 +153,7 @@
 @string{PAA="Pure and Applied Algebra"}
 @string{DIALECTICA="Dialectica"}
 @string{PRIMS="Publications of the Research Institute for Mathematical Sciences ({PRIMS})"}
+@string{CA="Categorical Algebra"}
 
 %% Cryptography
 @string{CRYPTO = "International Cryptology Conference ({CRYPTO})"}
@@ -181,6 +185,7 @@
 @string{IJPP = "International Journal of Parallel Programming"}
 @string{IP = "Information Processing"}
 @string{ICBC = "International Conference on Blockchain and Cryptocurrency ({ICBC})"}
+
 
 %%% I should try to have DOIs everywhere possible.
 
@@ -428,7 +433,7 @@
 
 @Manual{Coq04,
   title =        {The Coq proof assistant reference manual},
-  author =       {\mbox{The Coq development team}},
+  author =       {Coq Development Team, The},
   organization = {LogiCal Project},
   note =         {Version 8.0},
   year =         {2004},
@@ -3933,32 +3938,31 @@ doi={10.1093/comjnl/6.4.308}
   title = {Introduction to Choreographies},
   publisher = {Cambridge University Press},
   year = 2022,
-  note={Accepted for Publication}
+  isbn=9781108981491,
+  doi={10.1017/9781108981491}
 }
 
-@article{CruzFilipeGLMP21,
+@inproceedings{CruzFilipeGLMP22,
   author    = {Lu{\'{\i}}s Cruz{-}Filipe and
                Eva Graversen and
                Lovro Lugovic and
                Fabrizio Montesi and
                Marco Peressotti},
   title     = {Functional Choreographic Programming},
-  journal   = {CoRR},
-  volume    = {abs/2111.03701},
-  year      = {2021},
-  url       = {https://arxiv.org/abs/2111.03701},
-  eprinttype = {arXiv},
-  eprint    = {2111.03701},
-  timestamp = {Wed, 10 Nov 2021 16:07:30 +0100},
-  biburl    = {https://dblp.org/rec/journals/corr/abs-2111-03701.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  booktitle=ICTAC,
+  year=2022,
+  doi={10.1007/978-3-031-17715-6_15}
 }
 
-@misc{GiallorenzoMP20,
+@article{GiallorenzoMP24,
   author={Giallorenzo, Saverio and Montesi, Fabrizio and Peressotti, Marco},
-  title={Choreographies as Objects},
-  year={2020},
-  url={https://arxiv.org/abs/2005.09520},
+  title={Choral: Object-Oriented Choreographic Programming},
+  year={2024},
+  journal=TOPLAS,
+  volume=46,
+  number=1,
+  pages={1--59},
+  doi={10.1145/3632398}
 }
 
 @article{HondaYC16,
@@ -4377,12 +4381,14 @@ doi={10.1093/comjnl/6.4.308}
   year=2023
 }
 
-@misc{GraversenHM23,
+@article{GraversenHM24,
   title={Alice or Bob?: Process Polymorphism in Choreographies},
   author={Graversen, Eva and Hirsch, Andrew K. and Montesi, Fabrizio},
-  year={2023},
-  url={https://arxiv.org/abs/2303.04678},
-  note={Accessed March 30, 2023. Accepted to the Journal of Functional Programming (JFP).}
+  year={2024},
+  journal= JFP,
+  volume={34},
+  pages={e1},
+  doi={10.1017/S0956796823000114}
 }
 
 @inproceedings{ZhengA21,
@@ -4547,20 +4553,6 @@ doi={10.1093/comjnl/6.4.308}
   doi={10.1145/3632398}
 }
 
-@misc{rfc8473,
-    series =    {Request for Comments},
-    number =    8473,
-    howpublished =  {RFC 8473},
-    publisher = {RFC Editor},
-    doi =       {10.17487/RFC8473},
-    url =       {https://www.rfc-editor.org/info/rfc8473},
-    author =    {Andrei Popov and Magnus Nystrom and Dirk Balfanz and Adam Langley and Nick Harper and Jeff Hodges},
-    title =     {{Token Binding over HTTP}},
-    pagetotal = 25,
-    year =      2018,
-    month =     oct,
-}
-
 @inproceedings{VieringHEZ21,
   title={A Multiparty Session Typing Discipline for Fault-Tolerant Event-Driven Distributed Programming},
   author={Viering, Malte and Hu, Raymond and Eugster, Patrick and Ziarek, Lukasz},
@@ -4585,13 +4577,12 @@ doi={10.1093/comjnl/6.4.308}
   doi={10.1109/CSFW.2006.16}
  }
 
-@misc{GheriY23,
-  title={Hybrid Multiparty Session Types: Compositionality for Protocol Specification through Endpoint Projection (Full Version)},
+@inproceedings{GheriY23,
+  title={Hybrid Multiparty Session Types: Compositionality for Protocol Specification through Endpoint Projection},
   author={Gheri, Lorenzo and Yoshida, Nobuko},
   year={2023},
-  url={https://arxiv.org/pdf/2302.01979.pdf},
-  note={Accessed Feb 23, 2023.
-  Accepted to OOPSLA 2023.}
+  booktitle=OOPSLA,
+  doi={10.1145/3586031}
 }
 
 @inproceedings{JacobsBK22,
@@ -4734,4 +4725,203 @@ doi={10.1093/comjnl/6.4.308}
   booktitle=CADE,
   year={2015},
   doi={10.1007/978-3-319-21401-6_36}
+}
+
+@article{Leroy09,
+  title={Formal Verification of a Realistic Compiler},
+  author={Leroy, Xavier},
+  journal=CACM,
+  volume={52},
+  number={7},
+  pages={107--115},
+  year={2009},
+  doi={10.1145/1538788.1538814}
+}
+
+@inproceedings{HawblitzelHKLPSSZ15,
+  title={IronFleet: Proving Practical Distributed Systems Correct},
+  author={Hawblitzel, Chris and Howell, Jon and Kapritsos, Manos and Lorch, Jacob R. and Parno, Bryan and Roberts, Michael L. and Setty, Srinath and Zill, Brian},
+  booktitle=SOSP,
+  year={2015},
+  doi={10.1145/2815400.2815428}
+}
+
+@inproceedings{ChoiVSCA17,
+  title={Kami: A Platform for High-Level Parametric Hardware Specification and its Modular Verification},
+  author={Choi, Joonwon and Vijayaraghavan, Muralidaran and Sherman, Benjamin and Chlipala, Adam and Arvind},
+  booktitle=ICFP,
+  year={2017},
+  doi={10.1145/3110268}
+}
+
+@inproceedings{ZhaoNMZ12,
+  title={Formalizing the {LLVM} Intermediate Representation for Verified Program Transformations},
+  author={Zhao, Jianzhou and Nagarakatte, Santosh and Martin, Milo M.K. and Zdancewic, Steve},
+  booktitle=POPL,
+  year={2012},
+  doi={10.1145/2103656.2103709}
+}
+
+@article{Linsky68,
+  title={On Interpreting Doxastic Logic},
+  author={Linsky, Leonard},
+  journal={The Journal of Philosophy},
+  year={1968},
+  volume={65},
+  number={17},
+  pages={500--502},
+  doi={10.2307/2024352}
+}
+
+@article{Kripke63B,
+  title={Semantical Considerations on Modal Logic},
+  author={Kripke, Saul},
+  year={1963},
+  journal={Acta Philosophica Fennica},
+  volume={16},
+  pages={83--94}
+}
+
+@article{Kripke59,
+  title={A Completeness Theorem in Modal Logic},
+  author={Kripke, Saul},
+  year={1959},
+  journal=JSL,
+  volume={24},
+  number={1},
+  pages={1--14},
+  doi={10.2307/2964568}
+}
+
+@inproceedings{PfenningP89,
+  title={Inductively defined types in the Calculus of Constructions},
+  author={Pfenning, Frank and Paulin-Mohring, Christine},
+  year={1989},
+  booktitle=MFPS,
+  doi={10.1007/BFb0040259}
+}
+
+@article{Dybjer94,
+  title={Inductive Families},
+  author={Dybjer, Peter},
+  year={1994},
+  journal=FAC,
+  volume={6},
+  number={4},
+  pages={440--465},
+  doi={10.1007/BF01211308}
+}
+
+@inproceedings{CoquandP88,
+  title={Inductively Defined Types},
+  author={Coquand, Thierry and Paulin, Christine},
+  year={1988},
+  booktitle=COLOG,
+  doi={10.1007/3-540-52335-9_47}
+}
+
+@inproceedings{deMouraKADR15,
+  title={The Lean Theorem Prover (System Description)},
+  author={de Moura, Leonardo and Kong, Soonho and Avigad, Jeremy and van Doorn, Floris and von Raumer, Jakob},
+  year={2015},
+  booktitle=CADE,
+  doi={10.1007/978-3-319-21401-6_26}
+}
+
+@inproceedings{Mathlib20,
+  title={The Lean Mathematical Library},
+  author={Mathlib Community, The},
+  year={2020},
+  booktitle=CPP,
+  doi={10.1145/3372885.3373824}
+}
+
+@phdthesis{Bauer03,
+  author = {Bauer, Lujo},
+  title = {Access Control for the Web via Proof-Carrying Authorization},
+  school = {Princeton University},
+  year = {2003},
+  url = {https://users.ece.cmu.edu/~lbauer/papers/cite.php?ref=bauer:thesis}
+}
+
+@misc{Garg07,
+  title={An Introduction to Proof-Carrying Authorization},
+  author={Garg, Deepak},
+  year={2007},
+  url={https://people.mpi-sws.org/~dg/papers/intro-pca.pdf},
+  note={Unpublished notes. Accessed 2024-06-10.}
+}
+
+@article{Barendregt91,
+  title={Introduction to Generalized Type Systems},
+  author={Barendregt, Henk},
+  year={1991},
+  journal=JFP,
+  volume={1},
+  number={2},
+  pages={125--154},
+  doi={10.1017/s0956796800020025}
+}
+
+@inproceedings{Girard71,
+  title={Une Extension de l'Interpretation de G\"odel \`a l'Analyse, et son Application \`a l'\'Elimination des Copures dans l'Analyse et la Th\'eorie des Types},
+  author={Girard, Jean-Yves},
+  year={1971},
+  booktitle={Scandinavian Logic Symposium},
+  doi={10.1016/S0049-237X(08)70843-7}
+}
+
+@misc{ScottS71,
+  title={Toward a Mathematical Semantics for Computer Languages},
+  author={Scott, Dana and Strachey, Christopher},
+  year={1971},
+  note={Oxford Programming Research Group Technical Monograph}
+}
+
+@inproceedings{Reynolds84,
+  title={Polymorphism is Not Set-Theoretic},
+  author={Reynolds, John C.},
+  booktitle=SDT,
+  year={1984},
+  doi={10.1007/3-540-13346-1_7}
+}
+
+@inproceedings{EilenbergK66,
+  title={Closed Categories},
+  author={Eilenberg, Samuel and Kelly, G. Max},
+  year={1966},
+  booktitle=CA,
+  doi={10.1007/978-3-642-99902-4_22}
+}
+
+@book{LambekS88,
+  title={Introduction to Higher Order Categorical Logic},
+  author={Lambek, Joachim and Scott, Philip J.},
+  publisher={Cambridge University Press},
+  series={Cambridge Studies in Advanced Mathematics},
+  year={1988},
+  isbn={9780521356534}
+}
+
+@inproceedings{Brady11,
+  title={Idris: Systems Programming Meets Full Dependent Types},
+  author={Brady, Edwin C.},
+  booktitle=PLPV,
+  year={2011},
+  doi={10.1145/1929529.1929536}
+}
+
+@inproceedings{CruzFilipeGLMP23,
+  author          = {Cruz-Filipe, Luis and Graversen, Eva and Lugovi\'c, Lovro and Montesi, Fabrizio and Peressotti, Marco},
+  booktitle       = ECOOP,
+  title           = {Modular Compilation for Higher-Order Functional Choreographies},
+  year            = {2023},
+  doi             = {10.4230/LIPIcs.ECOOP.2023.7}
+}
+
+@misc{BatesN24,
+  title={We Know I Know You Know; Choreographic Programming With Multicast and Multiply Located Values}, 
+  author={Mako Bates and Joseph P. Near},
+  year={2024},
+  url={https://arxiv.org/abs/2403.05417}, 
 }
