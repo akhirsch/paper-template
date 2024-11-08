@@ -15,7 +15,7 @@ conference_anon: conference_anon.pdf
 tech_report: tech_report.pdf
 
 %.pdf: %.tex $(PAPER_FILES) $(BIB)
-	latexmk -pdf -bibtex -synctex=1 $<
+	latexmk -pdflatex=lualatex -pdf -bibtex -synctex=1 $<
 
 clean: 
 	@find . \( -name '*.aux'\

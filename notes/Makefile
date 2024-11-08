@@ -11,7 +11,7 @@ all: notes
 notes: notes.pdf
 
 %.pdf: %.tex $(PAPER_FILES) $(BIB)
-	latexmk -pdf -bibtex -synctex=1 $<
+	latexmk -pdflatex=lualatex -pdf -bibtex -synctex=1 $<
 
 clean: 
 	@find . \( -name '*.aux'\
